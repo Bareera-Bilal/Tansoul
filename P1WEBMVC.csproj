@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\View Models\**" />
+    <Content Remove="Models\View Models\**" />
+    <EmbeddedResource Remove="Models\View Models\**" />
+    <None Remove="Models\View Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="CloudinaryDotNet" Version="1.27.5" />
+    <PackageReference Include="dotenv.net" Version="3.2.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Razorpay" Version="3.1.4" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.1" />
+    <PackageReference Include="System.Net.Http.Json" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\" />
+  </ItemGroup>
+
+</Project>
