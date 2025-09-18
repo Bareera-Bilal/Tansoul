@@ -1,0 +1,284 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@* @{
+  ViewData["Title"] = "Register";
+}
+
+
+<style>
+  body {
+    background-color: #e0e5ec;
+  }
+
+  .register-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #333;
+    background-color: #f8f9fa;
+    border: #2C3E50 3px solid;
+    overflow: hidden;
+  }
+
+  .register-left,
+  .register-right {
+    flex: 1 1 50%;
+    padding: 40px 30px;
+  }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .btn-register {
+    padding: 12px;
+    font-weight: 600;
+    background-color: #2C3E50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-register:hover {
+    background-color: #1c2b3a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .register-right {
+    position: relative;
+    background-color: #f8f9fa;
+    border-left: #2C3E50 1px solid;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+  }
+
+  .register-right img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    border-radius: 15px;
+  }
+
+  .overlay-text {
+    position: absolute;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+  }
+
+  .login-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    background-color: #1c2b3a;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+
+  .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+</style>
+
+
+
+
+<div class="register-container">
+  <div class="register-left">
+    <h1>Patient Register Here</h1>
+
+    <br>
+    <form method="post" class="register-form">
+       
+       
+    =
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="Username" class="form-input" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="Email" class="form-input" required />
+
+      <label for="PhoneNumber">Phone Number</label>
+      <input type="tel" id="PhoneNumber" name="PhoneNumber" class="form-input" required />
+
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="Password" class="form-input" required />
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="ConfirmPassword" class="form-input" required />
+
+
+      <button type="submit" class="btn-register">Register</button>
+    </form>
+
+
+  </div>
+
+  <div class="register-right">
+    <div class="overlay-text">
+      <h2>Already Registered?</h2>
+      <p>Login to access your dashboard</p>
+      <a href="/User/Login" class="login-btn">Login</a>
+    </div>
+  </div>
+</div> *@
+
+
+
+
+
+
+
+
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<style>
+body {
+    background-color: #e0e5ec;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.register-left {
+    background: #e0e5ec;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px #c5c9d1, -10px -10px 30px #ffffff;
+    padding: 2rem;
+    max-width: 460px;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.register-left:hover {
+    transform: translateY(-6px);
+}
+
+.register-left h1 {
+    text-align: center;
+    color: #2C3E50;
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.register-form label {
+    display: block;
+    font-size: 0.95rem;
+    color: #2C3E50;
+    margin-bottom: 0.35rem;
+}
+
+.form-input {
+    background: #e0e5ec;
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    box-shadow: inset 5px 5px 10px #c5c9d1, inset -5px -5px 10px #ffffff;
+    margin-bottom: 1.2rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: inset 3px 3px 6px #c5c9d1, inset -3px -3px 6px #ffffff;
+}
+
+.btn-register {
+    padding: 12px;
+    background-color: #2C3E50;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    width: 100%;
+    box-shadow: 5px 5px 10px #c5c9d1, -5px -5px 10px #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: #1c2b3a;
+    box-shadow: inset 5px 5px 10px #1c2b3a, inset -5px -5px 10px #2C3E50;
+}
+
+.login-link {
+    margin-top: 1rem;
+    text-align: center;
+    display: block;
+    font-size: 1rem;
+    color: #1c2b3a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+    color: #2C3E50;
+}
+
+</style>
+
+<div class="register-container">
+  <div class="register-left">
+    <h1>Patient Register Here</h1>
+    <form method="post" class="register-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="Username" class="form-input" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="Email" class="form-input" required />
+
+      <label for="PhoneNumber">Phone Number</label>
+      <input type="tel" id="PhoneNumber" name="PhoneNumber" class="form-input" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="Password" class="form-input" required />
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="ConfirmPassword" class="form-input" required />
+
+      <button type="submit" class="btn-register">Register</button>
+   
+ 
+        <a href="/User/Register" class="login-link">Have an account? Login here</a>
+         </form>
+  </div>
+
+</div>

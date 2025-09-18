@@ -1,0 +1,114 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1a202c; /* Equivalent to bg-gray-900 */
+  color: #000; /* You had text-black */
+}
+
+#chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#chat-header {
+  padding: 1rem;
+  border-bottom: 1px solid #374151; /* border-gray-700 */
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: white;
+}
+
+#messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  font-size: 0.875rem;
+  color: white;
+}
+
+#chat-footer {
+  padding: 1rem;
+  border-top: 1px solid #374151;
+}
+
+.chat-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#question {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #1f2937; /* bg-gray-800 */
+  border: none;
+  color: white;
+  outline: none;
+}
+
+button {
+  background-color: #2563eb; /* blue-600 */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #3b82f6; /* blue-500 */
+}
+
+</style>
+<div id="chat-wrapper">
+  <div id="chat-header">👩‍⚕️ Tansoul Assistant</div>
+
+  <div id="messages"></div>
+
+  <div id="chat-footer">
+    <div class="chat-input-group">
+      <input id="question" type="text" placeholder="Type your question..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function sendMessage() {
+    const input = document.getElementById("question");
+    const text = input.value.trim();
+    if (!text) return;
+
+    appendMessage("You", text);
+    input.value = "";
+
+    fetch("/Chat/GetResponse", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question: text })
+    })
+    .then(res => res.json())
+    .then(reply => appendMessage("AI", reply));
+  }
+
+  function appendMessage(sender, text) {
+    const chat = document.getElementById("messages");
+    const msg = document.createElement("div");
+    msg.innerHTML = `<span class="text-green-400">${sender}:</span> ${text}`;
+    chat.appendChild(msg);
+    chat.scrollTop = chat.scrollHeight;
+  }
+</script>

@@ -1,0 +1,315 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@* 
+@{
+  ViewData["Title"] = "Login";
+}
+
+
+  <style>
+  .login-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 40px auto;
+    border-radius: 25px;
+    color: #333;
+    background-color: #f8f9fa;
+        border: #2C3E50 3px solid;
+
+
+   
+       
+}
+
+.login-left, .login-right {
+    flex: 1 1 50%;
+    padding: 40px 30px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.forgot-link {
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #2C3E50;
+    text-decoration: underline;
+}
+
+.btn-login {
+    padding: 12px;
+    font-weight: 600;
+    background-color: #2C3E50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #1c2b3a;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.login-right {
+    position: relative;
+    background-color: #f8f9fa;
+    border: #2C3E50 1px solid;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 500px;
+    
+}
+.login-right h1 {
+    margin-top: 30px;
+        font-weight: 600;
+        color: #2C3E50;
+}
+
+.login-right img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #1c2b3a;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+}
+
+.register-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    background-color: #1c2b3a;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.register-btn:hover {
+    background-color: #1c2b3a;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+
+
+
+
+
+ </style> 
+
+
+ 
+  
+ 
+<div class="login-container">
+    <div class="login-left">
+        <h1> Patient Login Here</h1>
+
+ 
+ <br>
+        <form method="post" class="login-form">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="Email" class="form-input" />
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="Password" class="form-input" />
+
+            @* <a href="/forgot-password" class="forgot-link">Forgot Password?</a> 
+
+ <div>
+                <a asp-controller="User" asp-action="ForgotPassWord"> Forgot PassWord ?</a>
+            </div>
+
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+    </div>
+
+    <div class="login-right">
+        <div class="image-overlay">
+    <img src="~/Images/TansoulRegisterVisual.png" alt="Welcome Illustration" />
+            <div class="overlay-text">
+                <h2>New here?</h2>
+                <p>Register and get instant benefits</p>
+                <a href="/User/Register" class="register-btn">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ *@
+
+
+@{
+    ViewData["Title"] = "Patient Login";
+}
+
+<style>
+    body {
+        background-color: #e0e5ec;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .fullscreen-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem;
+        margin-top: -100px;
+    }
+
+    .Login-card {
+        max-width: 460px;
+        width: 100%;
+        background: #e0e5ec;
+        border-radius: 20px;
+        box-shadow: 10px 10px 30px #c5c9d1, -10px -10px 30px #ffffff;
+        padding: 2rem;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .Login-card:hover {
+        transform: translateY(-6px);
+    }
+
+    .card-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-header h4 {
+        color: #2C3E50;
+        font-weight: 600;
+        font-size: 1.6rem;
+    }
+
+    .form-label {
+        font-size: 0.95rem;
+        color: #2C3E50;
+        margin-bottom: 0.35rem;
+    }
+
+    .form-control {
+        background: #e0e5ec;
+        border: none;
+        border-radius: 12px;
+        padding: 0.75rem 1rem;
+        box-shadow: inset 5px 5px 10px #c5c9d1, inset -5px -5px 10px #ffffff;
+        margin-bottom: 1.2rem;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+
+    .form-control:focus {
+        outline: none;
+        box-shadow: inset 3px 3px 6px #c5c9d1, inset -3px -3px 6px #ffffff;
+    }
+
+    .btn-submit {
+        padding: 12px;
+        background-color: #2C3E50;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        font-weight: 600;
+        width: 100%;
+        box-shadow: 5px 5px 10px #c5c9d1, -5px -5px 10px #ffffff;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+        background-color: #1c2b3a;
+        box-shadow: inset 5px 5px 10px #1c2b3a, inset -5px -5px 10px #2C3E50;
+    }
+
+    .link-wrap {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .link-wrap a {
+        color: #2C3E50;
+        text-decoration: underline;
+        font-size: 0.9rem;
+    }
+
+    .register-link {
+        margin-top: 1rem;
+        text-align: center;
+        display: block;
+        font-size: 1rem;
+        color: #1c2b3a;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .register-link:hover {
+        text-decoration: underline;
+        color: #2C3E50;
+    }
+</style>
+
+<div class="fullscreen-center">
+    <div class="Login-card">
+        <div class="card-header">
+            <h4>Patient Login</h4>
+        </div>
+
+        <form method="post">
+            @Html.AntiForgeryToken()
+
+            <label class="form-label" for="email">Email</label>
+            <input type="text" id="email" name="Email" class="form-control" aria-label="Patient Email" />
+
+            <label class="form-label" for="password">Password</label>
+            <input type="password" id="password" name="Password" class="form-control" aria-label="Patient Password" />
+
+            @if(ViewData["LoginError"] != null)
+            {
+                <span style="color:red;">@ViewData["LoginError"]</span>
+            }
+
+            <button type="submit" class="btn-submit">Login</button>
+        </form>
+
+        <div class="link-wrap">
+            <a asp-controller="User" asp-action="ForgotPassword">Forgot Password?</a>
+        </div>
+
+        <a href="/User/Register" class="register-link">New user? Register here</a>
+    </div>
+</div>

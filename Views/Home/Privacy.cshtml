@@ -1,0 +1,217 @@
+﻿﻿@{
+    ViewData["Title"] = "Privacy Policy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    
+   
+    .privacy-policy {
+        background-color: #e6ebef;
+        border: 1px solid #2C3E50;
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 30px;
+        margin: 20px auto;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        font-family: 'Segoe UI', sans-serif;
+        color: #2C3E50;
+    }
+
+    .privacy-policy::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 300px;
+        background: url('/Images/Logo.png') no-repeat center center;
+        background-size: contain;
+        transform: translate(-50%, -50%);
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+
+    .privacy-policy h1,
+    .privacy-policy h4 {
+        color: #2C3E50;
+        margin-top: 20px;
+        font-weight: 400;
+        padding: 10px 20px;
+        background-color: #2C3E50;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        transition: 0.3s ease;
+        display: inline-block;
+    }
+
+    .privacy-policy ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .privacy-policy p,
+    .privacy-policy li {
+        color: #444;
+        margin-top: 5px;
+    }
+
+    .privacy-policy a {
+        color: #2C3E50;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+
+    .btn-primary {
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 12px 26px;
+        margin: 5px;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
+        background-color: #2C3E50;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        background-color: #1c2b3a;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+
+.terms-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 40px;
+  align-items: flex-start; /* or center */
+}
+.terms-buttons .btn{
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 12px 26px;
+        margin: 5px;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
+        background-color:  #2C3E50 ;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+.terms-buttons .btn:hover {
+        background-color: #1c2b3a;
+       
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+
+
+
+</style>
+
+
+<body>
+
+    <div class="container privacy-policy">
+        <h1>@ViewData["Title"]</h1>
+
+        <p>At <strong>TanSoul</strong>, we understand how personal and sensitive healthcare information is. This privacy
+            policy outlines how we protect your data, what we collect, and how your experience on our platform remains
+            secure, transparent, and respectful.</p>
+
+        <h4>1. Information We Collect</h4>
+        <ul>
+            <li><strong>Personal:</strong> Full name, email address, contact number, gender, date of birth, and profile
+                photo.</li>
+            <li><strong>Medical:</strong> Symptoms submitted, health concerns, appointment logs, treatment notes,
+                prescriptions, and uploaded files (e.g. test results, scans).</li>
+            <li><strong>Technical:</strong> IP address, browser type, operating system, login history, and usage
+                patterns such as page views and button clicks.</li>
+        </ul>
+
+        <h4>2. How We Use Data</h4>
+        <ul>
+            <li>To connect patients with the right doctors based on specialization and availability.</li>
+            <li>To offer appointment scheduling, reminders, and post-consultation care instructions.</li>
+            <li>To improve the performance, security, and relevance of our platform services.</li>
+            <li>To personalize health suggestions and display important updates related to care.</li>
+            <li>To enhance customer support and troubleshoot account-related concerns.</li>
+        </ul>
+
+        <h4>3. Data Protection</h4>
+        <p>We employ advanced encryption technologies and multi-layered authentication to secure all data exchanges on
+            our platform. Sensitive medical records are protected by secure access controls, regular audits, and data
+            minimization principles to reduce unnecessary storage of personal health information.</p>
+
+        <h4>4. Sharing Information</h4>
+        <p>Your data is never sold or misused. We only share your information with qualified healthcare professionals
+            you choose to consult. In cases of legal obligations or urgent health-related circumstances, data may be
+            disclosed under appropriate safeguards.</p>
+
+        <h4>5. Your Rights</h4>
+        <p>You have full control over your data. You may request to:</p>
+        <ul>
+            <li>Access your consultation history and personal details.</li>
+            <li>Update contact information or correct any inaccuracies.</li>
+            <li>Delete your account and request removal of your personal data.</li>
+        </ul>
+        <p>Simply contact our support team and we will process your request in a timely and secure manner.</p>
+
+        <h4>6. Policy Updates</h4>
+        <p>We may occasionally revise this Privacy Policy to comply with new regulations or improve clarity. All updates
+            will be posted on this page. It is your responsibility to review this policy periodically to stay informed.
+        </p>
+
+        <h4>7. Financial Policies</h4>
+        <p><strong>For Patients:</strong> We believe in fair and transparent billing. If you cancel your appointment at
+            least <strong>2 hours in advance</strong>, your consultation fee is fully refundable. Refunds are initiated
+            within 24 hours and processed to your original payment method within 5–7 business days. For cancellations
+            after the 2-hour window or no-shows, refunds may not be applicable.</p>
+
+        <p><strong>For Doctors:</strong> To ensure the continued growth and maintenance of our platform, a service fee
+            of <strong>10%</strong> is deducted from each successful consultation. This deduction supports
+            infrastructure costs, secure data handling, and 24/7 technical support. Doctors can view detailed earnings
+            and deductions in their payout dashboard.</p>
+
+        <h4>8. Third-Party Services</h4>
+        <p>We may integrate with external services such as payment gateways, prescription fulfillment partners, or
+            analytics providers. These services are carefully selected, and we ensure they follow strict privacy and
+            security standards. However, their individual policies apply once you leave our platform.</p>
+
+        <h4>9. Children’s Privacy</h4>
+        <p>Our platform is designed for users aged 18 and above. If we learn that we have collected data from a child
+            under legal age without verified guardian consent, we will take immediate steps to delete that information.
+        </p>
+
+        <p>If you have any concerns or require clarification on any part of this policy, you may reach out to us
+            anytime.</p>
+
+        <p><strong>Need help?</strong> Email our support team at <a href="Email: support@tansoul.com">Email:
+                support@tansoul.com</a>.</p>
+
+       
+
+       <div class="terms-buttons">
+      <a href="@Url.Action("Terms", "Home")" class="btn">View Terms And Conditions</a>
+      <a href="@Url.Action("Login", "User")" class="btn">Book Your Appointment</a>
+</div>
+
+
+
+    </div>
+
+
+
+</body>
+
+
+
+

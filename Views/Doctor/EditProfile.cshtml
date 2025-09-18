@@ -1,0 +1,216 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@model P1WEBMVC.Models.ViewModels.DoctorEditView
+
+@* 
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<div style="max-width: 600px; margin: 40px auto; padding: 20px; background: rgba(255, 255, 255, 0.9); box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px;">
+    <h2 style="text-align: center; margin-bottom: 20px;">Edit Profile</h2>
+
+    <form asp-action="EditProfile" method="post">
+        <input type="hidden" asp-for="DoctorId" />
+
+        <div style="margin-bottom: 15px;">
+            <label asp-for="Name">Name</label><br />
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label asp-for="Username">Username</label><br />
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label asp-for="Email">Email</label><br />
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label asp-for="Specialization">Specialization</label><br />
+            <input asp-for="Specialization" class="form-control" />
+            <span asp-validation-for="Specialization" class="text-danger"></span>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label asp-for="Contact">Contact</label><br />
+            <input asp-for="Contact" class="form-control" />
+            <span asp-validation-for="Contact" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px;">Update Profile</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+ *@
+
+
+
+
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<div class="fullscreen-center">
+    <div class="Login-card">
+        <div class="card-header">
+            <h4>Edit Profile</h4>
+        </div>
+
+        <form asp-action="EditProfile" method="post">
+            <input type="hidden" asp-for="DoctorId" />
+
+            <div>
+                <label asp-for="Name" class="form-label">Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label asp-for="Username" class="form-label">Username</label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label asp-for="Specialization" class="form-label">Specialization</label>
+                <input asp-for="Specialization" class="form-control" />
+                <span asp-validation-for="Specialization" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label asp-for="Contact" class="form-label">Contact</label>
+                <input asp-for="Contact" class="form-control" />
+                <span asp-validation-for="Contact" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn-submit">Update Profile</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+
+
+<style>
+
+:root {
+    --bg-color: #e0e5ec;
+    --shadow-light: #ffffff;
+    --shadow-dark: #c5c9d1;
+    --text-color: #2C3E50;
+    --accent-color: #1c2b3a;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text-color);
+}
+
+/* Centered Layout */
+.fullscreen-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    margin-top: 50px;
+}
+
+/* Card Container */
+.Login-card {
+    max-width: 460px;
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px var(--shadow-dark),
+                -10px -10px 30px var(--shadow-light);
+    padding: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.Login-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Header */
+.card-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.card-header h4 {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Labels */
+.form-label {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 0.35rem;
+}
+
+/* Inputs */
+.form-control {
+    background: var(--bg-color);
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    box-shadow: inset 5px 5px 10px var(--shadow-dark),
+                inset -5px -5px 10px var(--shadow-light);
+    margin-bottom: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+                inset -3px -3px 6px var(--shadow-light);
+}
+
+/* Button */
+.btn-submit {
+    padding: 12px;
+    background-color: var(--text-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #1c2b3a;
+    box-shadow: inset 5px 5px 10px #1c2b3a,
+                inset -5px -5px 10px var(--text-color);
+}
+</style>

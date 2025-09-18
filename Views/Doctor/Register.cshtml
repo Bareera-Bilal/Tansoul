@@ -1,0 +1,269 @@
+﻿ @model P1WEBMVC.Models.ViewModels.DoctorRegisterView 
+
+@{
+    ViewData["Title"] = "Doctor Registration";
+}
+ 
+@* 
+
+
+<style>
+    .doctor-register-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 40px;
+        background-color: #f8f9fa;
+        border: 3px solid #2C3E50;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        font-family: 'Segoe UI', sans-serif;
+        position: relative;
+    }
+
+    .doctor-register-container::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 300px;
+        background: url('/Images/Logo.png') no-repeat center center;
+        background-size: contain;
+        transform: translate(-50%, -50%);
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .doctor-register-container h2 {
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: #2C3E50;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .doctor-register-container .form-control {
+        margin-bottom: 20px;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .doctor-register-container .btn-submit {
+        padding: 12px;
+        background-color: #2C3E50;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        width: 100%;
+        transition: background-color 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    .doctor-register-container .btn-submit:hover {
+        background-color: #1c2b3a;
+        cursor: pointer;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .alert {
+        margin-top: 20px;
+        position: relative;
+        z-index: 1;
+    }
+</style>
+
+<div class="doctor-register-container">
+    <h2>Doctor Registration</h2>
+
+    <form method="post" asp-controller="Doctor" asp-action="Register">
+        <input asp-for="Name" placeholder="Full Name" class="form-control" />
+        <input asp-for="Username" placeholder="Username" class="form-control" />
+        <input asp-for="Email" placeholder="Email" type="email" class="form-control" />
+        <input asp-for="Password" placeholder="Password" type="password" class="form-control" />
+        <input asp-for="Specialization" placeholder="Specialization" class="form-control" />
+        <input asp-for="Contact" placeholder="Contact Number" class="form-control" />
+        @* <input asp-for="MedicalLicense" placeholder="Medical License Number" class="form-control" />
+        <input asp-for="Aadhaar" placeholder="Aadhaar Number" class="form-control" maxlength="12" />
+        <input asp-for="PAN" placeholder="PAN Number" class="form-control" maxlength="10" /> *@
+@* 
+        <button type="submit" class="btn-submit">Register</button>
+    </form>
+
+    @if (ViewBag.errorMessage != null)
+    {
+        <div class="alert alert-danger">@ViewBag.errorMessage</div>
+    }
+
+    @if (ViewBag.successMessage != null)
+    {
+        <div class="alert alert-success">@ViewBag.successMessage</div>
+    }
+</div> *@
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    body {
+        background-color: #e0e5ec;
+    }
+
+    .fullscreen-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: #2C3E50;
+        padding: 2rem;
+        margin-top: 70px;
+    }
+
+    .Login-card {
+        max-width: 660px;
+        width: 100%;
+        background: #e0e5ec;
+        border-radius: 20px;
+        box-shadow:
+            10px 10px 30px #c5c9d1,
+            -10px -10px 30px #ffffff;
+        padding: 2rem;
+        transition: transform 0.3s ease-in-out;
+        color: #2C3E50;
+    }
+
+    .Login-card:hover {
+        transform: translateY(-6px);
+    }
+
+    .card-header {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #2C3E50;
+    }
+
+    .card-header h4 {
+        font-weight: 600;
+    }
+
+    .form-label {
+        font-size: 0.95rem;
+        color: #2C3E50;
+        margin-bottom: 0.35rem;
+    }
+
+    .form-control {
+        background: #e0e5ec;
+        border: none;
+        border-radius: 12px;
+        padding: 0.75rem 1rem;
+        box-shadow:
+            inset 5px 5px 10px #c5c9d1,
+            inset -5px -5px 10px #ffffff;
+        margin-bottom: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        outline: none;
+        box-shadow:
+            inset 3px 3px 6px #c5c9d1,
+            inset -3px -3px 6px #ffffff;
+    }
+
+    .btn-Register {
+         padding: 12px;
+        background-color: #2C3E50;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        width: 100%;
+        transition: background-color 0.3s ease;
+    
+    }
+
+
+    .btn-Register:hover {
+    color: white;
+    background-color:  #1c2b3a;
+    box-shadow:
+        inset 5px 5px 10px #1c2b3a
+        inset -5px -5px 10px  #2C3E50 ;
+} 
+</style>
+
+
+<div class="fullscreen-center">
+    <div class="card Login-card">
+
+        <div class="card-header">
+            <h4 class="mb-0">Doctor Registration</h4>
+        </div>
+
+        <div class="card-body px-4 py-4">
+            <form method="post" asp-controller="Doctor" asp-action="Register">
+
+                <div class="mb-3">
+                    <label for="Name" class="form-label">Full Name</label>
+                    <input asp-for="Name" class="form-control" id="Name" name="Name" placeholder="Enter your full name" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="Username" class="form-label">Username</label>
+                    <input asp-for="Username" class="form-control" id="Username" name="Username" placeholder="Choose a username" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" class="form-control" id="Email" name="Email" placeholder="Enter your email" type="email" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="Password" class="form-label">Password</label>
+                    <input asp-for="Password" class="form-control" id="Password" name="Password" placeholder="Enter your password" type="password" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="Specialization" class="form-label">Specialization</label>
+                    <input asp-for="Specialization" class="form-control" id="Specialization" name="Specialization" placeholder="e.g. Dermatologist" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="Contact" class="form-label">Contact Number</label>
+                    <input asp-for="Contact" class="form-control" id="Contact" name="Contact" placeholder="Enter your phone number" required />
+                </div>
+
+                <button type="submit" class="btn-Register">Register</button>
+
+            </form>
+
+            @if (ViewBag.errorMessage != null)
+            {
+                <div class="alert alert-danger mt-3">@ViewBag.errorMessage</div>
+            }
+
+            @if (ViewBag.successMessage != null)
+            {
+                <div class="alert alert-success mt-3">@ViewBag.successMessage</div>
+            }
+
+        </div>
+    </div>
+</div> 

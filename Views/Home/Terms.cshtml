@@ -1,0 +1,124 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@{
+    ViewData["Title"] = "Terms and Conditions";
+}
+
+<style>
+    .terms-container {
+        background-color: #e6ebef;
+        border: 1px solid #2C3E50;
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 30px;
+        margin: 20px auto;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        font-family: 'Segoe UI', sans-serif;
+        color: #2C3E50;
+    
+    }
+
+    .terms-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #2C3E50;
+    }
+
+    .terms-intro {
+        font-size: 1.1rem;
+        color: #34495E;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .terms-list {
+        list-style-type: disc;
+        padding-left: 20px;
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #2C3E50;
+        margin-bottom: 30px;
+    }
+
+    .terms-list li {
+        margin-bottom: 15px;
+    }
+
+    .terms-list a {
+        color: #2C3E50;
+        text-decoration: underline;
+        font-weight: 500;
+    }
+
+    .terms-footer {
+        font-size: 0.9rem;
+        color: #7f8c8d;
+        text-align: right;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 10px;
+        margin-top: 30px;
+    }
+
+    .terms-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 40px;
+    }
+
+    .terms-buttons .btn {
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 12px 26px;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
+        background-color: #2C3E50;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .terms-buttons .btn:hover {
+        background-color: #1c2b3a;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+</style>
+
+<div class="terms-container">
+    <h1 class="terms-title">@ViewData["Title"]</h1>
+
+    <p class="terms-intro">
+        Thank you for choosing Tansoul Health. These Terms and Conditions govern your access to and use of our website, digital platforms, and services. By using our services, you agree to abide by all terms mentioned here.
+    </p>
+
+    <ul class="terms-list">
+        <li><strong>1. Acceptance of Terms:</strong> By accessing and using Tansoul’s services, you agree to comply with these Terms and Conditions, our Privacy Policy, and any applicable laws and regulations.</li>
+        <li><strong>2. Eligibility:</strong> Our services are intended for users aged 18 and above. If you are under 18, you must access Tansoul under the supervision of a guardian.</li>
+        <li><strong>3. Medical Disclaimer:</strong> Our platform connects users with certified healthcare professionals. However, information provided on Tansoul is not a substitute for professional medical advice. Always consult a licensed practitioner before acting on health-related information.</li>
+        <li><strong>4. User Responsibilities:</strong> You agree to provide accurate, current, and complete information during registration and to keep your credentials confidential. Misuse of services, false identity, or unlawful activity will result in suspension.</li>
+        <li><strong>5. Consultations and Appointments:</strong> We facilitate online and in-clinic consultations. However, appointment availability may vary, and we are not liable for any delays or cancellations initiated by third-party providers.</li>
+        <li><strong>6. Privacy Protection:</strong> We take your privacy seriously. Your personal and medical data is stored securely and handled in compliance with local healthcare data laws. Please refer to our Privacy Policy for full details.</li>
+        <li><strong>7. Payment & Refund Policy:</strong> Fees paid for consultations are non-refundable unless canceled within the platform’s defined window. Any disputes will be handled through our official support process.</li>
+        <li><strong>8. Intellectual Property:</strong> All logos, design elements, content, and code are the property of Tansoul Health and are protected by copyright. Unauthorized use may lead to legal action.</li>
+        <li><strong>9. Modification of Terms:</strong> Tansoul reserves the right to update these Terms and Conditions at any time. Continued use of the platform after changes implies acceptance.</li>
+        <li><strong>10. Contact:</strong> For questions, reach us at <a href="mailto:support@tansoul.health">support@tansoul.health</a>. Our support team is available Monday to Saturday, 9:00 AM – 6:00 PM IST.</li>
+    </ul>
+
+    <div class="terms-buttons">
+        <a href="@Url.Action("Privacy", "Home")" class="btn">View Privacy-Policy</a>
+        <a href="@Url.Action("Register", "User")" class="btn">Book Your Appointment</a>
+    </div>
+
+    <div class="terms-footer">
+        Last updated: June 29, 2025
+    </div>
+</div>

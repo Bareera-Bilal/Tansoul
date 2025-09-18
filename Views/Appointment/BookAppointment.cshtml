@@ -1,0 +1,373 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@{
+    ViewData["Title"] = "Book Appointment";
+}
+@* 
+<div class="fullscreen-center">
+    <div class="card appointment-card">
+        <div class="card-header">
+            <h4 class="mb-0">Book an Appointment</h4>
+        </div>
+        <div class="card-body px-4 py-4">
+            <form method="post" action="/Appointment/BookAppointment">
+                <div class="mb-3"> <label for="PatientName" class="form-label">Full Name</label> <input type="text"
+                        class="form-control" name="PatientName" id="PatientName" placeholder="e.g. Ayesha Khan"
+                        required /> </div>
+                <div class="mb-3"> <label for="Date" class="form-label">Preferred Date</label> <input type="date"
+                        class="form-control" name="Date" id="Date" required /> </div>
+                <div class="mb-4"> <label for="Time" class="form-label">Preferred Time</label> <input type="time"
+                        class="form-control" name="Time" id="Time" required /> </div> <button type="button"
+                    class="btn btn-success w-100 fw-semibold" onclick="payNow()"> Proceed to Payment & Confirm </button>
+            </form>
+        </div>
+    </div>
+</div> *@
+
+
+@* <div class="fullscreen-center">
+    <div class="card appointment-card">
+        <div class="card-header">
+            <h4 class="mb-0">Book an Appointment</h4>
+        </div>
+        <div class="card-body px-4 py-4">
+            <form method="post" action="/Appointment/BookAppointment">
+                <div class="mb-3"> <label for="PatientName" class="form-label">Full Name</label> <input type="text"
+                        class="form-control" name="PatientName" id="PatientName" placeholder="e.g. Ayesha Khan"
+                        required /> </div>
+                <div class="mb-3"> <label for="Date" class="form-label">Preferred Date</label> <input type="date"
+                        class="form-control" name="Date" id="Date" required /> </div>
+                <div class="mb-4"> <label for="Time" class="form-label">Preferred Time</label> <input type="time"
+                        class="form-control" name="Time" id="Time" required /> </div> <button type="button"
+                    class="btn btn-success w-100 fw-semibold" onclick="payNow()"> Proceed to Payment & Confirm </button>
+            </form>
+        </div>
+    </div>
+</div> *@
+@* <style>
+    .fullscreen-center {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2C3E50;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.fullscreen-center::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: url('/Images/Logo.png') no-repeat center center;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.appointment-card {
+    position: relative;
+    z-index: 1;
+    background-color: #2C3E50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 24px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.appointment-card .btn-success {
+    font-weight: 600;
+}
+
+</style>
+
+
+<div class="fullscreen-center">
+    <div class="card appointment-card">
+        <div class="card-header">
+            <h4 class="mb-0">Book an Appointment</h4>
+        </div>
+        <div class="card-body px-4 py-4">
+            <form method="post" action="/Appointment/BookAppointment">
+                <div class="mb-3"> <label for="PatientName" class="form-label">Full Name</label> <input type="text"
+                        class="form-control" name="PatientName" id="PatientName" placeholder="e.g. Ayesha Khan"
+                        required /> </div>
+                <div class="mb-3"> <label for="Date" class="form-label">Preferred Date</label> <input type="date"
+                        class="form-control" name="Date" id="Date" required /> </div>
+                <div class="mb-4"> <label for="Time" class="form-label">Preferred Time</label> <input type="time"
+                        class="form-control" name="Time" id="Time" required /> </div> <button type="button"
+                    class="btn btn-success w-100 fw-semibold" onclick="payNow()"> Proceed to Payment & Confirm </button>
+            </form>
+        </div>
+    </div>
+</div> *@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@{
+    ViewData["Title"] = "Book Appointment";
+}
+
+<!-- Link to your external custom CSS -->
+<link rel="stylesheet" href="~/css/book-appointment.css" /> 
+ 
+
+<style>
+    body {
+        background: #e0e5ec;
+    }
+
+    /* Soft background */
+    .fullscreen-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #e0e5ec;
+        padding: 2rem;
+        margin-top: -50px;
+    }
+
+    /* Neumorphic Card */
+    .appointment-card {
+        max-width: 460px;
+        width: 100%;
+        background: #e0e5ec;
+        border-radius: 20px;
+        box-shadow:
+            10px 10px 30px #c5c9d1,
+            -10px -10px 30px #ffffff;
+        padding: 2rem;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .appointment-card:hover {
+        transform: translateY(-6px);
+    }
+
+    /* Header */
+    .card-header {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .card-header h4 {
+        color: #333;
+        font-weight: 600;
+    }
+
+    /* Form labels */
+    .form-label {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 0.35rem;
+    }
+
+    /* Inputs */
+    .form-control {
+        background: #e0e5ec;
+        border: none;
+        border-radius: 12px;
+        padding: 0.75rem 1rem;
+        box-shadow:
+            inset 5px 5px 10px #c5c9d1,
+            inset -5px -5px 10px #ffffff;
+        margin-bottom: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        outline: none;
+        box-shadow:
+            inset 3px 3px 6px #c5c9d1,
+            inset -3px -3px 6px #ffffff;
+    }
+
+    /* Button */
+    .btn-success {
+        padding: 12px;
+        background-color: #2C3E50;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        width: 100%;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-success:hover {
+        color: white;
+        background-color: #1c2b3a;
+        box-shadow:
+            inset 5px 5px 10px #1c2b3a inset -5px -5px 10px #2C3E50;
+    }
+</style>
+
+<div class="fullscreen-center">
+    <div class="card appointment-card">
+        <div class="card-header">
+            <h4 class="mb-0">Book an Appointment</h4>
+        </div>
+        <div class="card-body px-4 py-4">
+            <form method="post" action="/Appointment/BookAppointment">
+                <div class="mb-3">
+                    <label for="PatientName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" name="PatientName" id="PatientName"
+                        placeholder="e.g. Ayesha Khan" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="Date" class="form-label">Preferred Date</label>
+                    <input type="date" class="form-control" name="Date" id="Date" required />
+                </div>
+
+                <div class="mb-4">
+                    <label for="Time" class="form-label">Preferred Time</label>
+                    <input type="time" class="form-control" name="Time" id="Time" required />
+                </div>
+
+                @* <button type="button" class="btn btn-success w-100 fw-semibold" onclick="payNow()">
+                    Proceed to Payment & Confirm
+                </button> *@
+
+@* <button type="button" class="btn btn-success w-100 fw-semibold" onclick="payNow()">
+                    Proceed to Payment & Confirm
+                </button>  *@
+
+
+       @* <button type="button" class="btn btn-success w-100 fw-semibold" onclick="payNow()">
+    Proceed to Payment & Confirm
+</button>  *@
+ 
+ <button type="button" class="btn btn-success w-100 fw-semibold" onclick="confirmAppointment()">
+     Confirm Appointment
+</button> 
+
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+function confirmAppointment() {
+    const appointmentData = {
+        doctorId: document.getElementById("doctorId").value,
+        patientId: document.getElementById("patientId").value,
+        date: document.getElementById("appointmentDate").value,
+        time: document.getElementById("appointmentTime").value
+    };
+
+    fetch('/Appointment/ConfirmAppointment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(appointmentData)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = '/PatientDashboard'; // or dynamically update dashboard section
+        }
+    });
+}
+</script>
+
+}
+
+
+
+
+
+
+
+
+
+
+@* 
+
+@model Appointment
+
+<div class="fullscreen-center">
+    <div class="card appointment-card">
+        <div class="card-header">
+            <h4 class="mb-0">Book an Appointment</h4>
+        </div>
+        <div class="card-body px-4 py-4">
+            <form id="appointmentForm">
+                <input type="hidden" id="doctorId" value="@Model.DoctorId" />
+                <input type="hidden" id="patientId" value="@Model.PatientId" />
+
+                <div class="mb-3">
+                    <label for="appointmentDate" class="form-label">Preferred Date</label>
+                    <input type="date" class="form-control" id="appointmentDate" required />
+                </div>
+
+                <div class="mb-4">
+                    <label for="appointmentTime" class="form-label">Preferred Time</label>
+                    <input type="time" class="form-control" id="appointmentTime" required />
+                </div>
+
+                <button type="button" class="btn btn-success w-100 fw-semibold" onclick="confirmAppointment()">
+                    Confirm Appointment
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+function confirmAppointment() {
+    const appointmentData = {
+        DoctorId: document.getElementById("doctorId").value,
+        PatientId: document.getElementById("patientId").value,
+        AppointmentDate: document.getElementById("appointmentDate").value,
+        Time: document.getElementById("appointmentTime").value
+    };
+
+    fetch('/Appointment/ConfirmAppointment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(appointmentData)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = '/Patient/Dashboard';
+        } else {
+            alert("Failed to confirm appointment: " + (data.error || "Unknown error."));
+        }
+    });
+}
+</script> *@

@@ -1,0 +1,179 @@
+@{
+        ViewData["Title"] = "About";
+
+}
+
+
+@{
+    ViewData["Title"] = "About";
+}
+
+
+<style>
+    /* ABOUT PAGE STYLES */
+
+body{
+    background-color: #e6ebef;
+}
+/* Section Header */
+.Box1 {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    color: #2C3E50;
+    text-align: center;
+     border: #2C3E50 3px solid;
+     margin-top: 70px;
+}
+
+.Box1 h1 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.Box1 h2 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.Box1 p {
+    color: #2C3E50;
+}
+
+/* Mission & Vision Section */
+.why-tansoul {
+    background-color: #2C3E50;
+    @* background-color: #e6ebef; *@
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 100px;
+    border: white 20px solid;
+    border-radius: 10px;
+}
+
+.why-tansoul h2 {
+    font-weight: 600;
+    margin-bottom: 15px;
+     color: white;
+}
+
+.why-tansoul p {
+    color: white;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+/* Core Values (Card Style) */
+.card1 {
+    border: 1px solid #2C3E50;
+    background-color: #fff;
+    padding: 25px;
+    transition: transform 0.3s ease;
+    margin-top: 80px;
+}
+
+.card1:hover {
+    transform: translateY(-5px);
+}
+
+.card1 h3 {
+    color: #2C3E50;
+    font-weight: 600;
+}
+
+.card1 p {
+    color: #34495E;
+}
+
+/* Booking Banner */
+.booking-banner {
+    background-color: #ffffff;
+    color: #2C3E50;
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 100px;
+}
+
+.booking-banner h2 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.booking-banner .lead {
+    font-size: 1.1rem;
+    color: #34495E;
+    margin-bottom: 20px;
+}
+
+/* Reuse shared button */
+.btn {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 26px;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    background-color: #2C3E50;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #1c2b3a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    color: white;
+}
+
+</style>
+
+<body>
+    <!-- About Hero -->
+    <section class="Box1 text-center">
+        <h1>About TanSoul</h1>
+        <h2>Where Compassion Meets Care</h2>
+        <p>Our mission is to make quality healthcare accessible, safe, and deeply personal.</p>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="why-tansoul text-center py-5 px-3">
+        <h2>Our Vision</h2>
+        <p>TanSoul was founded with a singular purpose: to bridge the gap between patients and compassionate medical professionals—whether in remote towns or bustling cities. We believe everyone deserves access to trusted healthcare at the tap of a screen.</p>
+        
+        <h2>Our Mission</h2>
+        <p>We aim to empower people with seamless, secure, and smart digital health solutions. From video consultations to clinic visits, our platform is designed to support your wellness journey every step of the way.</p>
+    </section>
+
+    <!-- Our Core Values -->
+    <section class="Box4 px-4 py-5 text-center">
+        <div class="row d-flex flex-wrap justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card1">
+                    <h3>Compassion</h3>
+                    <p>At TanSoul, kindness is key. Every interaction is guided by empathy and respect for the individual journey.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card1">
+                    <h3>Integrity</h3>
+                    <p>We believe in transparency and trust. Our doctors are background-checked and committed to the highest ethical standards.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card1">
+                    <h3>Innovation</h3>
+                    <p>From video consultations to smart reminders, we’re always evolving to meet your healthcare needs more efficiently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Call to Action -->
+    <section class="booking-banner text-center my-5 px-4 py-5">
+        <h2>Join the TanSoul Community</h2>
+        <p class="lead">Experience healthcare that listens, responds, and cares—from anywhere you are.</p>
+        <a href="/User/Register" class="btn">Register Today</a>
+    </section>
+</body>

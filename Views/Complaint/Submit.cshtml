@@ -1,0 +1,116 @@
+﻿
+
+@model Complaint
+
+
+
+<style>
+    .complaint-container {
+    height: 400px;
+    max-width: 1350px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    border-radius: 25px;
+    border: 3px solid #2C3E50;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+     background-color: #f8f9fa;
+}
+
+.complaint-container h2 {
+    text-align: center;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.complaint-container p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.validation-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+
+
+button[type="submit"]  {
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 12px 26px;
+        margin: 5px;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
+    
+          background-color: #2C3E50;
+        transition: all 0.3s ease;
+    }
+
+button[type="submit"]:hover  {
+            background-color: #1c2b3a;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+
+
+
+
+
+
+
+</style>
+
+
+<body>
+    
+
+<div class="complaint-container">
+    <h2>Submit a Complaint</h2>
+    <p>We value your feedback and are committed to improving your experience. Please describe your issue below.</p>
+
+    <form asp-action="Submit" method="post">
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea asp-for="Description" id="description" required></textarea>
+            <span asp-validation-for="Description" class="validation-message"></span>
+        </div> <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+ 
+
+</body>

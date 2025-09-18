@@ -1,0 +1,170 @@
+﻿
+
+@using P1WEBMVC.Models
+@model IEnumerable<Doctor>
+
+@{
+    ViewBag.Title = "Meet Our Specialists";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Adjust if needed
+}
+
+
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background-color: #e6ebef;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        height: 500px;
+        background: url('/Images/Logo.png') no-repeat center center;
+        background-size: contain;
+        transform: translate(-50%, -50%);
+        opacity: 0.07;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .doctor-cards .btn {
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 12px 26px;
+        margin: 5px;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
+        background-color: #2C3E50;
+        transition: all 0.3s ease;
+    }
+
+    .doctor-cards .btn:hover {
+        background-color: #1c2b3a;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .doctor-heading {
+        margin-top: 30px;
+        font-weight: 600;
+        color: #2C3E50;
+    }
+
+    #doctorSearchBox {
+        border: 2px solid #2C3E50;
+    }
+
+    #doctorSuggestions li:hover {
+        background-color: #f2f2f2;
+        cursor: pointer;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="text-center mb-4 doctor-heading">Meet Our Specialists</h2>
+
+<div class="container my-5 doctor-cards">
+    <div class="mb-4 position-relative doctor-banner">
+        <input type="text" id="doctorSearchBox" class="form-control rounded-pill px-4 py-3 shadow-sm" 
+               placeholder="Search doctor by name or specialty..." autocomplete="off" />
+        <ul id="doctorSuggestions" class="list-group position-absolute w-100 mt-1 shadow-sm" 
+            style="z-index: 1000; display: none;"></ul>
+    </div>
+
+    <div class="row">
+        @foreach (var doctor in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@doctor.Name</h5>
+                        <p class="card-text mb-1"><strong>Email:</strong> @doctor.Email</p>
+                        <p class="card-text"><strong>Specialty:</strong> @doctor.Specialization</p>
+                    </div>
+                    <div class="card-footer bg-white text-center">
+                        <a asp-controller="Appointment"
+                           asp-action="BookAppointment"
+                           asp-route-doctorId="@doctor.DoctorId"
+                           class="btn w-100">
+                            Book Appointment
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#doctorSearchBox').on('input', function () {
+            const query = $(this).val().trim();
+
+            if (query.length === 0) {
+                $('#doctorSuggestions').hide();
+                return;
+            }
+
+            $.ajax({
+                url: '/Doctor/GetDoctorMatches',
+                data: { term: query },
+                success: function (data) {
+                    const suggestionList = $('#doctorSuggestions').empty();
+
+                    if (data.length === 0) {
+                        suggestionList.append('<li class="list-group-item text-muted">No doctor with this name is available. You can search with specialty.</li>');
+                    } else {
+                        data.forEach(function (doctor) {
+                            const item = $('<li class="list-group-item list-group-item-action"></li>')
+                                .text(`${doctor.Name} — ${doctor.Specialization}`)
+                                .on('click', function () {
+                                    $('#doctorSearchBox').val(doctor.Name);
+                                    $('#doctorSuggestions').hide();
+                                });
+                            suggestionList.append(item);
+                        });
+                    }
+
+                    suggestionList.show();
+                }
+            });
+        });
+
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('#doctorSearchBox, #doctorSuggestions').length) {
+                $('#doctorSuggestions').hide();
+            }
+        });
+    });
+</script>
+
